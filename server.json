@@ -4,17 +4,9 @@
       "id": 1,
       "name": "Ao molho",
       "description": "Macarrão ao molho branco, fughi e cheiro verde das montanhas",
-      "price": "19.90",
+      "price": "19.99",
       "available": true,
       "image": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/desafio-food/food1.png"
-    },
-    {
-      "image": "https://www.receitas-sem-fronteiras.com/cache/slideshow/aa/a5/c5/fa/bartosz-lucasz.jpg/2cb6823c975ee09b0d93e071c71c86d5.jpg",
-      "name": "teste de Adição",
-      "price": "58.95",
-      "description": "Perfeito",
-      "available": true,
-      "id": 4
     }
   ]
 }

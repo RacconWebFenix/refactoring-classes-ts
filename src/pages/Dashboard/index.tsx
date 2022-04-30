@@ -85,7 +85,7 @@ export function Dashboard() {
   return (
     <>
       <Header openModal={toggleModal} />
-      {/* <ModalAddFood
+      <ModalAddFood
         isOpen={modalOpen}
         setIsOpen={toggleModal}
         handleAddFood={handleAddFood}
@@ -95,7 +95,7 @@ export function Dashboard() {
         setIsOpen={toggleEditModal}
         editingFood={editingFood}
         handleUpdateFood={handleUpdateFood}
-      /> */}
+      />
 
       <FoodsContainer data-testid="foods-list">
         {foods &&
