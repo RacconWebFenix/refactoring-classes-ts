@@ -1,6 +1,5 @@
 import ReactModal from "react-modal";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 
 export function Modal({ isOpen, children, setIsOpen }) {
   const [modalStatus, setModalStatus] = useState(isOpen);
@@ -9,7 +8,7 @@ export function Modal({ isOpen, children, setIsOpen }) {
     if (isOpen !== modalStatus) {
       setModalStatus(isOpen);
     }
-  });
+  }, [modalStatus, isOpen]);
 
   return (
     <ReactModal
