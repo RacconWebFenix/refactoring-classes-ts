@@ -7,9 +7,19 @@ import { ModalAddFood } from "../../components/ModalAddFood";
 import { ModalEditFood } from "../../components/ModalEditFood";
 import { FoodsContainer } from "./styles";
 
+
+export interface FoodsProps {
+  id: number;
+  name: string;
+  description: string;
+  price: string;
+  available: boolean;
+  image: string;
+}
+
 export function Dashboard() {
-  const [foods, setFoods] = useState([]);
-  const [editingFood, setEditingFood] = useState({});
+  const [foods, setFoods] = useState<FoodsProps[]>([]);
+  const [editingFood, setEditingFood] = useState<FoodsProps>({} as FoodsProps);
   const [modalOpen, setModalOpen] = useState(false);
   const [editModalOpen, setEditModalOpen] = useState(false);
 
@@ -21,7 +31,7 @@ export function Dashboard() {
     getFoods();
   }, []);
 
-  const handleAddFood = async (food) => {
+  const handleAddFood = async (food: FoodsProps) => {
     try {
       const response = await api.post("/foods", {
         ...food,
@@ -34,7 +44,7 @@ export function Dashboard() {
     }
   };
 
-  const handleUpdateFood = async (food) => {
+  const handleUpdateFood = async (food: FoodsProps) => {
     try {
       const foodUpdated = await api.put(`/foods/${editingFood.id}`, {
         ...editingFood,
@@ -51,7 +61,7 @@ export function Dashboard() {
     }
   };
 
-  const handleDeleteFood = async (id) => {
+  const handleDeleteFood = async (id: number) => {
     await api.delete(`/foods/${id}`);
 
     const foodsFiltered = foods.filter((food) => food.id !== id);
@@ -67,7 +77,7 @@ export function Dashboard() {
     setEditModalOpen(!editModalOpen);
   };
 
-  const handleEditFood = (food) => {
+  const handleEditFood = (food: FoodsProps) => {
     setEditModalOpen(true);
     setEditingFood(food);
   };
@@ -75,7 +85,7 @@ export function Dashboard() {
   return (
     <>
       <Header openModal={toggleModal} />
-      <ModalAddFood
+      {/* <ModalAddFood
         isOpen={modalOpen}
         setIsOpen={toggleModal}
         handleAddFood={handleAddFood}
@@ -85,7 +95,7 @@ export function Dashboard() {
         setIsOpen={toggleEditModal}
         editingFood={editingFood}
         handleUpdateFood={handleUpdateFood}
-      />
+      /> */}
 
       <FoodsContainer data-testid="foods-list">
         {foods &&
