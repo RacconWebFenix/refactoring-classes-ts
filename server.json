@@ -7,6 +7,14 @@
       "price": "19.90",
       "available": true,
       "image": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/desafio-food/food1.png"
+    },
+    {
+      "image": "tet",
+      "name": "etsw",
+      "price": "sgfsgs",
+      "description": "safasfsf",
+      "available": true,
+      "id": 2
     }
   ]
 }
